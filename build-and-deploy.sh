@@ -4,7 +4,7 @@ self="$(dirname "$(realpath "$0")")"
 if [ -n "$1" ]; then
     name="$1"
 else
-    name="website"
+    name="webserver"
 fi
 
 echo "Building..."
