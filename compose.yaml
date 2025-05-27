@@ -1,0 +1,23 @@
+name: "nginx"
+
+services:
+  nginx-website:
+    image: nginx
+    container_name: "website"
+    ports:
+      - "80:80"
+    volumes:
+      - type: "bind"
+        source: "./nginx.conf"
+        target: "/etc/nginx/nginx.conf"
+        read_only: true
+        bind:
+          create_host_path: true
+
+      - type: "bind"
+        source: "./website"
+        target: "/srv/www/website"
+        read_only: true
+        bind:
+          create_host_path: true
+    restart: unless-stopped

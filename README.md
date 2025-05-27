@@ -1,9 +1,7 @@
-## Dependencies
-* docker
-* docker-buildx
+# nginx-webserver
 ## How to use
-1. Move your website into the `website` folder, or create a symbolic link.
+1. Move your website into the `website` folder.
 2. Build and start the webserver.
 ```
-./build-and-deploy <name, default="webserver">
+docker compose up [--detach]
 ```
